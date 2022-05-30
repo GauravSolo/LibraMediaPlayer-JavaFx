@@ -73,7 +73,7 @@ public class Scene1Controller implements Initializable {
     private Media media;
     private MediaPlayer mediaPlayer;
     private TreeItem<String>  prevItem = new TreeItem<String>();
-
+    private Stage stage;
     @FXML
     private SplitPane splitpane;
     @FXML
@@ -118,23 +118,23 @@ public class Scene1Controller implements Initializable {
         });
 
        try{
-           playNode = new ImageView(new Image(new FileInputStream("src/icons/play.png")));
+           playNode = new ImageView(new Image(new FileInputStream("src/icons/playicon.png")));
            playNode.setFitWidth(20.0);
            playNode.setFitHeight(20.0);
            play.setGraphic(playNode);
 
 
-           pauseNode = new ImageView(new Image(new FileInputStream("src/icons/pause.png")));
+           pauseNode = new ImageView(new Image(new FileInputStream("src/icons/pauseicon.png")));
            pauseNode.setFitWidth(20.0);
            pauseNode.setFitHeight(20.0);
 
 
-           prevNode = new ImageView(new Image(new FileInputStream("src/icons/previous.png")));
+           prevNode = new ImageView(new Image(new FileInputStream("src/icons/backwardicon.png")));
            prevNode.setFitWidth(20.0);
            prevNode.setFitHeight(20.0);
            prev.setGraphic(prevNode);
 
-           nextNode = new ImageView(new Image(new FileInputStream("src/icons/next.png")));
+           nextNode = new ImageView(new Image(new FileInputStream("src/icons/fastforward.png")));
            nextNode.setFitWidth(20.0);
            nextNode.setFitHeight(20.0);
            next.setGraphic(nextNode);
@@ -592,6 +592,14 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
     public void revertCursor(){
         slider.setStyle("-fx-cursor: hand;");
         System.out.println("drageddddd");
+    }
+
+
+    public void setStage(Stage primarystage){
+        stage = primarystage;
+    }
+    public void closeWindow(){
+        stage.close();
     }
 
 }

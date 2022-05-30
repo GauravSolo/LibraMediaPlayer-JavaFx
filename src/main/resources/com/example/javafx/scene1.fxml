@@ -28,15 +28,15 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                <MenuItem mnemonicParsing="false" onAction="#chooseFile" text="Open File">
+                <MenuItem mnemonicParsing="false" onAction="#chooseFile" text="Open media">
                     <accelerator>
                         <KeyCodeCombination alt="DOWN" code="N" control="UP" meta="UP" shift="UP" shortcut="UP" />
                     </accelerator></MenuItem>
-                <MenuItem fx:id="openfolder" mnemonicParsing="false" onAction="#openFolder" text="Open Folder">
+                <MenuItem fx:id="openfolder" mnemonicParsing="false" onAction="#openFolder" text="Open folder">
                      <accelerator>
                         <KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                <MenuItem mnemonicParsing="false" text="Close" />
+                <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Close" />
             </items>
           </Menu>
 

@@ -18,7 +18,7 @@ public class Main extends  Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("scene1.fxml"));
         Parent root = (Parent)loader.load();
         Scene1Controller controller = (Scene1Controller) loader.getController();
-
+        controller.setStage(primaryStage);
         ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) ->
         {
             System.out.println("caling");
