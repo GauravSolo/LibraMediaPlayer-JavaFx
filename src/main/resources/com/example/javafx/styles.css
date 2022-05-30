@@ -1,3 +1,37 @@
 .mediaview{
     -fx-background: red;
 }
+#slider {
+    /* default track color: */
+    -slider-filled-track-color: darkgray ;
+    -slider-track-color: -slider-filled-track-color ;
+}
+
+/* Make thumb same color as filled part of track */
+#slider .thumb {
+    -fx-background-color: -slider-filled-track-color ;
+}
+
+#slider .track {
+    -fx-background-color: -slider-track-color ;
+}
+
+#slider2 {
+    /* default track color: */
+    -slider-filled-track-color: orangered ;
+    -slider-track-color: -slider-filled-track-color ;
+}
+
+/* Make thumb same color as filled part of track */
+#slider2 .thumb {
+    -fx-background-color: -slider-filled-track-color ;
+        -fx-pref-height: 12px;
+        -fx-pref-width: 12px;
+
+}
+
+#slider2 .track {
+    -fx-background-color: -slider-track-color ;
+    -fx-pref-height: 3px;
+
+}

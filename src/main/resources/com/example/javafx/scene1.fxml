@@ -22,9 +22,9 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Scene1Controller">
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Scene1Controller">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="menubar" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -83,7 +83,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Slider>
-                  <HBox alignment="BOTTOM_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="216.0" VBox.vgrow="NEVER">
+                  <HBox fx:id="mediahbox" alignment="BOTTOM_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="216.0" VBox.vgrow="NEVER">
                      <children>
                         <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" style="-fx-alignment: center;" HBox.hgrow="ALWAYS">
                            <children>
@@ -107,7 +107,7 @@
                                  </graphic></Button>
                               <Button fx:id="next" mnemonicParsing="false" onAction="#nextMedia" />
                               <Region prefHeight="200.0" prefWidth="109.0" HBox.hgrow="ALWAYS" />
-                              <Slider maxWidth="150.0" prefWidth="150.0" HBox.hgrow="NEVER" />
+                              <Slider fx:id="slider2" maxWidth="150.0" prefWidth="150.0" HBox.hgrow="NEVER" />
                               <Label fx:id="timer" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="150.0" text="00:00 / 00:00" textAlignment="CENTER" HBox.hgrow="NEVER">
                                  <font>
                                     <Font size="14.0" />

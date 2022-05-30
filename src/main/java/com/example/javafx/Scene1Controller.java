@@ -1,9 +1,13 @@
 package com.example.javafx;
 
+import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -18,12 +22,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.w3c.dom.ls.LSOutput;
 
@@ -56,6 +63,12 @@ public class Scene1Controller implements Initializable {
 
     @FXML
     private Button hidebutton,showbutton;
+
+    @FXML
+    Slider  slider2;
+
+    @FXML
+    HBox mediahbox;
     private File file;
     private Media media;
     private MediaPlayer mediaPlayer;
@@ -65,6 +78,13 @@ public class Scene1Controller implements Initializable {
     private SplitPane splitpane;
     @FXML
     private Label timer = new Label("00:00 / 00:00");
+
+    @FXML
+    private  MenuBar menubar;
+
+    @FXML
+    private BorderPane borderpane;
+
     private Node componentsPane;
     private SplitPane.Divider divider;
     private  Double divpos = 0.0;
@@ -75,8 +95,14 @@ public class Scene1Controller implements Initializable {
     private int elapseTime=0, hours=0, minutes=0, seconds=0;
     private  String hours_string,minutes_string,seconds_string;
     private  String hours_string_real,minutes_string_real,seconds_string_real;
+    private int timercount ;
+    private long MIN_STATIONARY_TIME = 5000000000L ; // nanoseconds
+    private boolean treeflag = false;
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+
+
         slider.setOnDragDetected(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -166,8 +192,8 @@ public class Scene1Controller implements Initializable {
 //        player.setFitHeight(h);
         treeview.getParent().setVisible(false);
         treeview.getParent().setManaged(false);
-        showbutton.getParent().setVisible(true);
-        showbutton.getParent().setManaged(true);
+        showbutton.setVisible(true);
+        showbutton.setManaged(true);
 
 
 
@@ -175,8 +201,105 @@ public class Scene1Controller implements Initializable {
         divider = splitpane.getDividers().get(0);
 //        System.out.println(componentsPane);
 //        System.out.println(divider);
+
+        slider.styleProperty().bind(Bindings.createStringBinding(() -> {
+            double percentage = (slider.getValue() - slider.getMin()) / (slider.getMax() - slider.getMin()) * 100.0 ;
+            return String.format("-slider-track-color: linear-gradient(to right, -slider-filled-track-color 0%%, "
+                            + "-slider-filled-track-color %f%%, -fx-base %f%%, -fx-base 100%%);",
+                    percentage, percentage);
+        }, slider.valueProperty(), slider.minProperty(), slider.maxProperty()));
+
+        slider2.styleProperty().bind(Bindings.createStringBinding(() -> {
+            double percentage = (slider2.getValue() - slider2.getMin()) / (slider2.getMax() - slider2.getMin()) * 100.0 ;
+            return String.format("-slider-track-color: linear-gradient(to right, -slider-filled-track-color 0%%, "
+                            + "-slider-filled-track-color %f%%, -fx-base %f%%, -fx-base 100%%);",
+                    percentage, percentage);
+        }, slider2.valueProperty(), slider2.minProperty(), slider2.maxProperty()));
+
+
         setMediaSlider(mediaPlayer);
 
+        BooleanProperty mouseMoving = new SimpleBooleanProperty();
+        mouseMoving.addListener((obs, wasMoving, isNowMoving) -> {
+            if (! isNowMoving) {
+                System.out.println("Mouse stopped!");
+                         if(mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING){
+                               mediahbox.setVisible(false);
+                               mediahbox.setManaged(false);
+                               slider.setVisible(false);
+                               slider.setManaged(false);
+                               menubar.setVisible(false);
+                               menubar.setManaged(false);
+                               if(treeflag){
+                                   treeview.getParent().setVisible(false);
+                                   treeview.getParent().setManaged(false);
+                                   showbutton.setVisible(true);
+                                   showbutton.setManaged(true);
+                                   splitpane.setDividerPosition(0,0);
+                               }
+                           }
+                System.out.println("treee "+treeflag);
+
+            }
+        });
+        PauseTransition pause = new PauseTransition(Duration.millis(MIN_STATIONARY_TIME / 1_000_000));
+        pause.setOnFinished(e -> {
+            mouseMoving.set(false);
+            System.out.println("lljkjkljl");
+        });
+
+        treeview.setOnMouseMoved(e -> {
+            System.out.println("jdjdjdjd");
+            mouseMoving.set(true);
+            pause.playFromStart();
+            if(mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING){
+               mediahbox.setVisible(true);
+               mediahbox.setManaged(true);
+               slider.setVisible(true);
+               slider.setManaged(true);
+               menubar.setVisible(true);
+               menubar.setManaged(true);
+               if(treeflag){
+                   treeview.getParent().setVisible(true);
+                   treeview.getParent().setManaged(true);
+                   showbutton.setVisible(false);
+                   showbutton.setManaged(false);
+                   splitpane.setDividerPosition(0,0.3);
+               }
+           }
+
+        });
+        splitpane.setOnMouseMoved(e -> {
+            System.out.println("jdjdjdjd");
+            mouseMoving.set(true);
+            pause.playFromStart();
+            if(mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING){
+                mediahbox.setVisible(true);
+                mediahbox.setManaged(true);
+                slider.setVisible(true);
+                slider.setManaged(true);
+                menubar.setVisible(true);
+                menubar.setManaged(true);
+                if(treeflag){
+                    treeview.getParent().setVisible(true);
+                    treeview.getParent().setManaged(true);
+                    showbutton.setVisible(false);
+                    showbutton.setManaged(false);
+                    splitpane.setDividerPosition(0,0.3);
+                }
+            }
+        });
+
+    }
+
+    public void mediaVolume(MediaPlayer funcMediaPlayer1){
+        slider2.setValue(funcMediaPlayer1.getVolume()*100);
+        slider2.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+                funcMediaPlayer1.setVolume(slider2.getValue()/100);
+            }
+        });
 
     }
 
@@ -203,6 +326,10 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
            timer.setText("00:00"+" / "+ hours_string_real+minutes_string_real+":"+seconds_string_real);
 
            System.out.println("minutes_string_real "+minutes_string_real + "  seconds_string_real  " + seconds_string_real + " mile "+ funcMediaPlayer.getMedia().getDuration());
+
+//setting media Volume
+           mediaVolume(mediaPlayer);
+
        });
 
        funcMediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
@@ -360,6 +487,10 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
                    play.setGraphic(playNode);
 
                    media = new Media(treemap.get(treeItem.getValue().toString()));
+                   if(mediaPlayer != null)
+                   {
+                       mediaPlayer.dispose();
+                   }
                    mediaPlayer = new MediaPlayer(media);
                    mediaview.setMediaPlayer((mediaPlayer));
                    setMediaSlider(mediaPlayer);
@@ -379,8 +510,9 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
 
         treeview.getParent().setVisible(false);
         treeview.getParent().setManaged(false);
-        showbutton.getParent().setVisible(true);
-        showbutton.getParent().setManaged(true);
+        showbutton.setVisible(true);
+        showbutton.setManaged(true);
+        treeflag = false;
         splitpane.setDividerPosition(0,0);
         componentsPane.setVisible(false);
         componentsPane.setManaged(false);
@@ -393,8 +525,9 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
 
         treeview.getParent().setVisible(true);
         treeview.getParent().setManaged(true);
-        showbutton.getParent().setVisible(false);
-        showbutton.getParent().setManaged(false);
+        showbutton.setVisible(false);
+        showbutton.setManaged(false);
+        treeflag = true;
         componentsPane.setVisible(true);
         componentsPane.setManaged(true);
 //        splitpane.getItems().add(0, componentsPane);
@@ -415,6 +548,10 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
             System.out.println(file.getPath() + "====" + file.toURI().toString() );
             media = new Media(file.toURI().toString());
             play.setGraphic(playNode);
+            if(mediaPlayer != null)
+            {
+                mediaPlayer.dispose();
+            }
             mediaPlayer = new MediaPlayer(media);
             mediaview.setMediaPlayer((mediaPlayer));
             setMediaSlider(mediaPlayer);
