@@ -13,9 +13,11 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -82,6 +84,14 @@ public class Scene1Controller implements Initializable {
     @FXML
     private  MenuBar menubar;
 
+
+
+
+    @FXML
+    private ChoiceBox choicebox;
+
+    @FXML
+    private  StackPane stackSidePane;
     @FXML
     private BorderPane borderpane;
 
@@ -96,11 +106,19 @@ public class Scene1Controller implements Initializable {
     private  String hours_string,minutes_string,seconds_string;
     private  String hours_string_real,minutes_string_real,seconds_string_real;
     private int timercount ;
-    private long MIN_STATIONARY_TIME = 5000000000L ; // nanoseconds
+    private long MIN_STATIONARY_TIME = 7000000000L ; // nanoseconds
     private boolean treeflag = false;
-
+    private final String[] mediaspeed = {"0.5 x", "1 x", "2 x", "3 x", "4 x"};
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+
+        choicebox.getItems().addAll(mediaspeed);
+        choicebox.getSelectionModel().select(1);
+//        timer.setStyle("-fx-text-fill: white;");
+        mediahbox.setStyle("-fx-background-color: lightsteelblue;");
+
+
+//        treeview.getCellFactory().setStyle("-fx-background-color: #272822;");
 
 
         slider.setOnDragDetected(new EventHandler<MouseEvent>() {
@@ -290,6 +308,13 @@ public class Scene1Controller implements Initializable {
             }
         });
 
+        choicebox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                changeSpeed(mediaPlayer);
+            }
+        });
+
     }
 
     public void mediaVolume(MediaPlayer funcMediaPlayer1){
@@ -303,6 +328,12 @@ public class Scene1Controller implements Initializable {
 
     }
 
+    public void changeSpeed(MediaPlayer funcMediaPlayer){
+        if(funcMediaPlayer != null)
+        {
+            funcMediaPlayer.setRate(Double.parseDouble(((String)choicebox.getValue()).split("\\s+")[0]));
+        }
+    }
 public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
 
    try {
@@ -313,7 +344,7 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
            slider.setValue(0);
            hours_string_real = String.format("%02d",Math.round(funcMediaPlayer.getMedia().getDuration().toMinutes()/60)%60);
 
-
+           changeSpeed(funcMediaPlayer);
            if(Objects.equals(hours_string_real, "00"))
            {
                hours_string_real = "";
@@ -362,7 +393,25 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
        funcMediaPlayer.setOnEndOfMedia(()->{
            System.out.println("stop");
            play.setGraphic(playNode);
+           slider.setMin(0);
+           funcMediaPlayer.seek(new Duration(0.0));
+           funcMediaPlayer.stop();
            timer.setText("00:00 / "+hours_string_real+minutes_string_real+":"+seconds_string_real);
+           if(funcMediaPlayer.getStatus() == MediaPlayer.Status.PLAYING){
+               mediahbox.setVisible(true);
+               mediahbox.setManaged(true);
+               slider.setVisible(true);
+               slider.setManaged(true);
+               menubar.setVisible(true);
+               menubar.setManaged(true);
+               if(treeflag){
+                   treeview.getParent().setVisible(true);
+                   treeview.getParent().setManaged(true);
+                   showbutton.setVisible(false);
+                   showbutton.setManaged(false);
+                   splitpane.setDividerPosition(0,0.3);
+               }
+           }
        });
 
        slider.setOnMousePressed(new EventHandler<MouseEvent>() {

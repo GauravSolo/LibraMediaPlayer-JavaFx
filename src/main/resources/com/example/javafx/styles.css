@@ -35,3 +35,25 @@
     -fx-pref-height: 3px;
 
 }
+
+.root{
+    -background1: lightsteelblue;
+     -background2: red;
+
+}
+
+.tree-view {
+    -fx-background-color:background1;
+}
+
+.tree-cell {
+    -fx-background-color: -background1; // Default color
+}
+
+.tree-view:focused .tree-cell:filled:selected {
+    -fx-background-color: purple; // Focused color
+}
+
+.tree-cell:filled:selected{
+    -fx-background-color:lightcyan; // Unfocused color
+}

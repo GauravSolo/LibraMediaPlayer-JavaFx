@@ -4,6 +4,7 @@
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -64,7 +65,7 @@
          <items>
             <StackPane fx:id="stackSidePane" prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <TreeView fx:id="treeview" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="200.0" prefWidth="200.0" />
+                  <TreeView fx:id="treeview" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" />
                   <Button fx:id="hidebutton" mnemonicParsing="false" onAction="#hideButton" text="&lt;" StackPane.alignment="TOP_RIGHT" />
                </children>
             </StackPane>
@@ -83,9 +84,9 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Slider>
-                  <HBox fx:id="mediahbox" alignment="BOTTOM_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="216.0" VBox.vgrow="NEVER">
+                  <HBox fx:id="mediahbox" alignment="BOTTOM_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: #272822;" VBox.vgrow="NEVER">
                      <children>
-                        <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" style="-fx-alignment: center;" HBox.hgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" HBox.hgrow="ALWAYS">
                            <children>
                               <Button fx:id="showbutton" mnemonicParsing="false" onAction="#showButton" text="&gt;">
                                  <HBox.margin>
@@ -93,9 +94,10 @@
                                  </HBox.margin>
                               </Button>
                               <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <ChoiceBox fx:id="choicebox" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" HBox.hgrow="NEVER" />
                               <Button fx:id="prev" mnemonicParsing="false" onAction="#prevMedia">
                                  <HBox.margin>
-                                    <Insets left="100.0" />
+                                    <Insets left="50.0" />
                                  </HBox.margin></Button>
                               <Button fx:id="play" mnemonicParsing="false" onAction="#play">
                                  <graphic>
@@ -105,9 +107,12 @@
                                        </image>
                                     </ImageView>
                                  </graphic></Button>
-                              <Button fx:id="next" mnemonicParsing="false" onAction="#nextMedia" />
-                              <Region prefHeight="200.0" prefWidth="109.0" HBox.hgrow="ALWAYS" />
-                              <Slider fx:id="slider2" maxWidth="150.0" prefWidth="150.0" HBox.hgrow="NEVER" />
+                              <Button fx:id="next" alignment="CENTER" mnemonicParsing="false" onAction="#nextMedia">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin></Button>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Slider fx:id="slider2" maxWidth="100.0" minWidth="80.0" prefWidth="150.0" HBox.hgrow="NEVER" />
                               <Label fx:id="timer" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="150.0" text="00:00 / 00:00" textAlignment="CENTER" HBox.hgrow="NEVER">
                                  <font>
                                     <Font size="14.0" />
