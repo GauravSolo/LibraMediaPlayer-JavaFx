@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -15,6 +16,7 @@
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
@@ -70,27 +72,27 @@
                <children>
                   <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                         <MediaView fx:id="mediaview" nodeOrientation="INHERIT" preserveRatio="false" HBox.hgrow="ALWAYS">
+                         <MediaView fx:id="mediaview" nodeOrientation="INHERIT" onMouseClicked="#play" preserveRatio="false" HBox.hgrow="ALWAYS">
                            <viewport>
                               <Rectangle2D />
                            </viewport>
                         </MediaView>
                      </children>
                   </HBox>
-                  <Slider fx:id="slider" />
+                  <Slider fx:id="slider">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Slider>
                   <HBox alignment="BOTTOM_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="216.0" VBox.vgrow="NEVER">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="69.0" prefWidth="20.0">
+                        <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" style="-fx-alignment: center;" HBox.hgrow="ALWAYS">
                            <children>
                               <Button fx:id="showbutton" mnemonicParsing="false" onAction="#showButton" text="&gt;">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </Button>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" style="-fx-alignment: center;" HBox.hgrow="ALWAYS">
-                           <children>
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                               <Button fx:id="prev" mnemonicParsing="false" onAction="#prevMedia">
                                  <HBox.margin>
                                     <Insets left="100.0" />
@@ -104,10 +106,8 @@
                                     </ImageView>
                                  </graphic></Button>
                               <Button fx:id="next" mnemonicParsing="false" onAction="#nextMedia" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="NEVER">
-                           <children>
+                              <Region prefHeight="200.0" prefWidth="109.0" HBox.hgrow="ALWAYS" />
+                              <Slider maxWidth="150.0" prefWidth="150.0" HBox.hgrow="NEVER" />
                               <Label fx:id="timer" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="150.0" text="00:00 / 00:00" textAlignment="CENTER" HBox.hgrow="NEVER">
                                  <font>
                                     <Font size="14.0" />

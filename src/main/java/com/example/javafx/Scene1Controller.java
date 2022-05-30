@@ -15,6 +15,8 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
@@ -61,7 +63,6 @@ public class Scene1Controller implements Initializable {
 
     @FXML
     private SplitPane splitpane;
-
     @FXML
     private Label timer = new Label("00:00 / 00:00");
     private Node componentsPane;
@@ -76,6 +77,19 @@ public class Scene1Controller implements Initializable {
     private  String hours_string_real,minutes_string_real,seconds_string_real;
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        slider.setOnDragDetected(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                changeCursor();
+            }
+        });
+
+        slider.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                revertCursor();
+            }
+        });
 
        try{
            playNode = new ImageView(new Image(new FileInputStream("src/icons/play.png")));
@@ -434,4 +448,13 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
 
         System.out.println("next");
     }
+    public void changeCursor(){
+        slider.setStyle("-fx-cursor: move;");
+        System.out.println("draged");
+    }
+    public void revertCursor(){
+        slider.setStyle("-fx-cursor: hand;");
+        System.out.println("drageddddd");
+    }
+
 }

@@ -1,10 +1,17 @@
 package com.example.javafx;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+
+import java.security.Key;
+
+import static javafx.scene.input.KeyCode.SPACE;
+
 public class Main extends  Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -23,7 +30,16 @@ public class Main extends  Application {
 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                System.out.println(keyEvent.getCode());
+                if(keyEvent.getCode() == SPACE)
+                {
+                    controller.play();
+                }
+            }
+        });
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.show();
