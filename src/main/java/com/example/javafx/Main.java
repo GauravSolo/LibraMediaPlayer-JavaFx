@@ -8,8 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-import java.security.Key;
+import java.util.Objects;
 
+import static javafx.scene.input.KeyCode.ESCAPE;
 import static javafx.scene.input.KeyCode.SPACE;
 
 public class Main extends  Application {
@@ -18,7 +19,7 @@ public class Main extends  Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("scene1.fxml"));
         Parent root = (Parent)loader.load();
         Scene1Controller controller = (Scene1Controller) loader.getController();
-        controller.setStage(primaryStage);
+
         ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) ->
         {
             System.out.println("caling");
@@ -29,7 +30,7 @@ public class Main extends  Application {
         primaryStage.heightProperty().addListener(stageSizeListener);
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/themes/theme1.css")).toExternalForm());
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
@@ -40,13 +41,18 @@ public class Main extends  Application {
                 }
             }
         });
+        controller.setStage(primaryStage);
+        controller.setScene(scene);
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
         launch(args);
     }
+
+
 
 }

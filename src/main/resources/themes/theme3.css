@@ -1,0 +1,70 @@
+.mediaview{
+    -fx-background: red;
+}
+#slider {
+    /* default track color: */
+    -slider-filled-track-color: darkgray ;
+    -slider-track-color: -slider-filled-track-color ;
+}
+
+/* Make thumb same color as filled part of track */
+#slider .thumb {
+    -fx-background-color: -slider-filled-track-color ;
+}
+
+#slider .track {
+    -fx-background-color: -slider-track-color ;
+}
+
+#slider2 {
+    /* default track color: */
+    -slider-filled-track-color: orangered ;
+    -slider-track-color: -slider-filled-track-color ;
+}
+
+/* Make thumb same color as filled part of track */
+#slider2 .thumb {
+    -fx-background-color: -slider-filled-track-color ;
+        -fx-pref-height: 12px;
+        -fx-pref-width: 12px;
+
+}
+
+#slider2 .track {
+    -fx-background-color: -slider-track-color ;
+    -fx-pref-height: 3px;
+
+}
+.root{
+    -color1: lightsteelblue;
+    -color2: lightgrey;
+    -color3: green;
+    -color4: lightcyan;
+    -color5: darkgray;
+    -color6: white;
+    -color7: #202124;
+    -color8: sky;
+    -color9: lightgreen;
+    -color10: green;
+}
+#mediahbox{
+ -fx-background-color: -color9;
+}
+.split-pane-divider {
+  -fx-padding: 0 ;
+}
+.tree-view {
+    -fx-background-color: -color3;
+}
+
+.tree-cell {
+    -fx-background-color: -color4; // Default color
+}
+
+.tree-view:focused .tree-cell:filled:selected {
+    -fx-background-color: -color10; // Focused color
+}
+
+.tree-cell:filled:selected{
+    -fx-background-color: -color4; // Unfocused color
+}

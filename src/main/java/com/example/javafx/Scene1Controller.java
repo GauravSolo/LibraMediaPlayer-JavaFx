@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -34,6 +35,7 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import net.synedra.validatorfx.Check;
 import org.w3c.dom.ls.LSOutput;
 
 import java.io.File;
@@ -75,7 +77,7 @@ public class Scene1Controller implements Initializable {
     private Media media;
     private MediaPlayer mediaPlayer;
     private TreeItem<String>  prevItem = new TreeItem<String>();
-    private Stage stage;
+
     @FXML
     private SplitPane splitpane;
     @FXML
@@ -83,10 +85,6 @@ public class Scene1Controller implements Initializable {
 
     @FXML
     private  MenuBar menubar;
-
-
-
-
     @FXML
     private ChoiceBox choicebox;
 
@@ -95,27 +93,72 @@ public class Scene1Controller implements Initializable {
     @FXML
     private BorderPane borderpane;
 
+    @FXML
+    private Menu menutheme;
+    @FXML
+    private Button fullscreenbutton;
     private Node componentsPane;
     private SplitPane.Divider divider;
     private  Double divpos = 0.0;
     private Map<String, String> treemap = new HashMap<String, String>();
-    private ImageView playNode,pauseNode,prevNode,nextNode;
-    private  int interval;
+    private ImageView playNode,pauseNode,prevNode,nextNode, expand,compress;
 
-    private int elapseTime=0, hours=0, minutes=0, seconds=0;
     private  String hours_string,minutes_string,seconds_string;
+
     private  String hours_string_real,minutes_string_real,seconds_string_real;
-    private int timercount ;
     private long MIN_STATIONARY_TIME = 7000000000L ; // nanoseconds
     private boolean treeflag = false;
     private final String[] mediaspeed = {"0.5 x", "1 x", "2 x", "3 x", "4 x"};
+    private RadioMenuItem[] themes = new RadioMenuItem[]{new RadioMenuItem("Theme 1"),new RadioMenuItem("Theme 2"), new RadioMenuItem("Theme 3")};
+    private  String menuid;
+    private Stage stage;
+    private  Scene scene;
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+
+        ToggleGroup myToggleGroup = new ToggleGroup();
+
+        themes[0].setToggleGroup(myToggleGroup);
+        themes[1].setToggleGroup(myToggleGroup);
+        themes[2].setToggleGroup(myToggleGroup);
+
+        themes[0].setId("1");
+        themes[1].setId("2");
+        themes[2].setId("3");
+        themes[0].setSelected(true);
+        EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e)
+            {
+                menuid = ((RadioMenuItem) e.getSource()).getId();
+                if (((RadioMenuItem)e.getSource()).isSelected()) {
+                    scene.getStylesheets().clear();
+
+                    scene.getStylesheets().add(getClass().getResource("/themes/theme"+menuid+".css").toExternalForm());
+                    System.out.println("/themes/theme"+menuid+".css");
+                    System.out.println(scene);
+                    System.out.println(stage);
+                    stage.setScene(scene);
+                    System.out.println("scene sceee");
+                }
+            }
+        };
+
+
+        themes[0].setOnAction(event);
+        themes[1].setOnAction(event);
+        themes[2].setOnAction(event);
+        menutheme.getItems().addAll(themes);
+
+
+
+
+
+
 
         choicebox.getItems().addAll(mediaspeed);
         choicebox.getSelectionModel().select(1);
 //        timer.setStyle("-fx-text-fill: white;");
-        mediahbox.setStyle("-fx-background-color: lightsteelblue;");
+//        mediahbox.setStyle("-fx-background-color: lightsteelblue;");
 
 
 //        treeview.getCellFactory().setStyle("-fx-background-color: #272822;");
@@ -136,25 +179,36 @@ public class Scene1Controller implements Initializable {
         });
 
        try{
+           expand =  new ImageView(new Image(new FileInputStream("src/icons/expand.png")));
+           expand.setFitWidth(18.0);
+           expand.setFitHeight(18.0);
+
+           compress =  new ImageView(new Image(new FileInputStream("src/icons/compress.png")));
+           compress.setFitWidth(18.0);
+           compress.setFitHeight(18.0);
+
+           fullscreenbutton.setGraphic(expand);
+
+
            playNode = new ImageView(new Image(new FileInputStream("src/icons/playicon.png")));
-           playNode.setFitWidth(20.0);
-           playNode.setFitHeight(20.0);
+           playNode.setFitWidth(15.0);
+           playNode.setFitHeight(15.0);
            play.setGraphic(playNode);
 
 
            pauseNode = new ImageView(new Image(new FileInputStream("src/icons/pauseicon.png")));
-           pauseNode.setFitWidth(20.0);
-           pauseNode.setFitHeight(20.0);
+           pauseNode.setFitWidth(15.0);
+           pauseNode.setFitHeight(15.0);
 
 
            prevNode = new ImageView(new Image(new FileInputStream("src/icons/backwardicon.png")));
-           prevNode.setFitWidth(20.0);
-           prevNode.setFitHeight(20.0);
+           prevNode.setFitWidth(15.0);
+           prevNode.setFitHeight(15.0);
            prev.setGraphic(prevNode);
 
            nextNode = new ImageView(new Image(new FileInputStream("src/icons/fastforward.png")));
-           nextNode.setFitWidth(20.0);
-           nextNode.setFitHeight(20.0);
+           nextNode.setFitWidth(15.0);
+           nextNode.setFitHeight(15.0);
            next.setGraphic(nextNode);
        }catch (Exception e)
        {
@@ -177,7 +231,18 @@ public class Scene1Controller implements Initializable {
             public void changed(ObservableValue<? extends Bounds> observable, Bounds oldValue, Bounds newValue) {
                 mediaview.setFitHeight(newValue.getHeight());
                 mediaview.setFitWidth(newValue.getWidth());
-
+                if(!treeflag)
+                {
+                    splitpane.setDividerPosition(0,0);
+                }else if(treeflag && stage.isFullScreen()){
+                    splitpane.setDividerPosition(0,0.2);
+                    System.out.println("full screen  ");
+                }
+                if(!stage.isFullScreen())
+                {
+                    fullscreenbutton.setGraphic(expand);
+                }
+                System.out.println(" stage full screen "+ stage.isFullScreen());
             }
         });
 
@@ -208,16 +273,17 @@ public class Scene1Controller implements Initializable {
 //        // make the video conform to the size of the stage now...
 //        player.setFitWidth(w);
 //        player.setFitHeight(h);
+
         treeview.getParent().setVisible(false);
         treeview.getParent().setManaged(false);
-        showbutton.setVisible(true);
-        showbutton.setManaged(true);
-
-
+        showbutton.setVisible(false);
+        showbutton.setManaged(false);
 
         componentsPane=splitpane.getItems().get(0);
         divider = splitpane.getDividers().get(0);
-//        System.out.println(componentsPane);
+//        splitpane.lookup(".split-pane-divider").setStyle("-fx-background: red;");
+
+        //        System.out.println(componentsPane);
 //        System.out.println(divider);
 
         slider.styleProperty().bind(Bindings.createStringBinding(() -> {
@@ -282,7 +348,7 @@ public class Scene1Controller implements Initializable {
                    treeview.getParent().setManaged(true);
                    showbutton.setVisible(false);
                    showbutton.setManaged(false);
-                   splitpane.setDividerPosition(0,0.3);
+                   splitpane.setDividerPosition(0,divpos);
                }
            }
 
@@ -303,7 +369,7 @@ public class Scene1Controller implements Initializable {
                     treeview.getParent().setManaged(true);
                     showbutton.setVisible(false);
                     showbutton.setManaged(false);
-                    splitpane.setDividerPosition(0,0.3);
+                    splitpane.setDividerPosition(0,divpos);
                 }
             }
         });
@@ -409,7 +475,7 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
                    treeview.getParent().setManaged(true);
                    showbutton.setVisible(false);
                    showbutton.setManaged(false);
-                   splitpane.setDividerPosition(0,0.3);
+                   splitpane.setDividerPosition(0,divpos);
                }
            }
        });
@@ -515,9 +581,6 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         System.out.println("eventlist");
 
         System.out.println(divpos);
-        splitpane.setDividerPosition(0,divpos);
-//        System.out.println(divider.setPosition(0.5));
-
     }
     public void selectItem(){
         TreeItem<String> treeItem = (TreeItem<String>) treeview.getSelectionModel().getSelectedItem();
@@ -624,14 +687,21 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
 
 
     }
-    public void prevMedia()
+    public void backMedia()
     {
-
+        if(mediaPlayer != null)
+        {
+            mediaPlayer.seek(new Duration((mediaPlayer.getCurrentTime().toSeconds() - 10)*1000 ));
+        }
         System.out.println("prev");
     }
-    public void nextMedia()
+    public void forwardMedia()
     {
+        if(mediaPlayer != null)
+        {
+            mediaPlayer.seek(new Duration((mediaPlayer.getCurrentTime().toSeconds() + 10)*1000 ));
 
+        }
         System.out.println("next");
     }
     public void changeCursor(){
@@ -643,12 +713,36 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         System.out.println("drageddddd");
     }
 
+    public void changeTheme(){
 
+    }
     public void setStage(Stage primarystage){
         stage = primarystage;
+    }
+    public void setScene(Scene primaryscene){
+        scene = primaryscene;
     }
     public void closeWindow(){
         stage.close();
     }
+
+    public void toggleScreen(){
+        if(stage.isFullScreen())
+        {
+            stage.setFullScreen(false);
+            if(treeflag)
+            {
+                splitpane.setDividerPosition(0,0.7);
+            }
+            fullscreenbutton.setGraphic(expand);
+        }else{
+            stage.setFullScreen(true);
+            fullscreenbutton.setGraphic(compress);
+        }
+    }
+
+
+
+
 
 }

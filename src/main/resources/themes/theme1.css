@@ -10,6 +10,7 @@
 /* Make thumb same color as filled part of track */
 #slider .thumb {
     -fx-background-color: -slider-filled-track-color ;
+ 
 }
 
 #slider .track {
@@ -37,23 +38,35 @@
 }
 
 .root{
-    -background1: lightsteelblue;
-     -background2: red;
-
+    -color1: lightsteelblue;
+    -color2: lightgrey;
+    -color3: green;
+    -color4: lightcyan;
+    -color5: purple;
+    -color6: white;
+    -color7: #202124;
+    -color10: black;
 }
-
+#mediahbox{
+ -fx-background-color: -color2;
+}
+.split-pane-divider {
+  -fx-padding: 1 ;
+}
 .tree-view {
-    -fx-background-color:background1;
+    -fx-background-color: -color1;
 }
 
 .tree-cell {
-    -fx-background-color: -background1; // Default color
+    -fx-background-color: -color1; // Default color
 }
 
 .tree-view:focused .tree-cell:filled:selected {
-    -fx-background-color: purple; // Focused color
+    -fx-background-color: -color4; // Focused color
+     -fx-text-fill: -color10;
 }
 
 .tree-cell:filled:selected{
-    -fx-background-color:lightcyan; // Unfocused color
+    -fx-background-color: -color4; // Unfocused color
+    -fx-text-fill: -color10;
 }
