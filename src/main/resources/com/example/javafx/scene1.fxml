@@ -68,8 +68,14 @@
                     <children>
                         <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                             <children>
-                                <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                <StackPane fx:id="mediastackpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                     <children>
+                              <ImageView fx:id="coverimage" fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" />
+                              <Label fx:id="coverlabel" textFill="#eb2f42" StackPane.alignment="BOTTOM_CENTER">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
                                         <MediaView fx:id="mediaview" nodeOrientation="INHERIT" onMouseClicked="#play" preserveRatio="false">
                                             <viewport>
                                                 <Rectangle2D />

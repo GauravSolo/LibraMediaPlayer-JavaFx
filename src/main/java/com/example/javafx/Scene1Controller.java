@@ -10,12 +10,15 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.MapChangeListener;
+import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -89,6 +92,11 @@ public class Scene1Controller implements Initializable {
     private ChoiceBox choicebox;
 
     @FXML
+    private ImageView coverimage;
+    @FXML
+    private Label coverlabel;
+
+    @FXML
     private  StackPane stackSidePane;
     @FXML
     private BorderPane borderpane;
@@ -102,7 +110,7 @@ public class Scene1Controller implements Initializable {
     private  Double divpos = 0.0;
     private Map<String, String> treemap = new HashMap<String, String>();
     private ImageView playNode,pauseNode,prevNode,nextNode, expand,compress;
-
+    private  String labeltext;
     private  String hours_string,minutes_string,seconds_string;
 
     private  String hours_string_real,minutes_string_real,seconds_string_real;
@@ -244,6 +252,8 @@ public class Scene1Controller implements Initializable {
             public void changed(ObservableValue<? extends Bounds> observable, Bounds oldValue, Bounds newValue) {
                 mediaview.setFitHeight(newValue.getHeight());
                 mediaview.setFitWidth(newValue.getWidth());
+                coverimage.setFitHeight(newValue.getHeight());
+                coverimage.setFitWidth(newValue.getWidth());
                 if(!treeflag)
                 {
                     splitpane.setDividerPosition(0,0);
@@ -618,7 +628,46 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
                    }
                    mediaPlayer = new MediaPlayer(media);
                    mediaview.setMediaPlayer((mediaPlayer));
+
                    setMediaSlider(mediaPlayer);
+
+                   if(treemap.get(treeItem.getValue().toString()).contains(".mp3"))
+                   {
+                       labeltext = "";
+                       ObservableMap<String,Object> meta_data= mediaPlayer.getMedia().getMetadata();
+
+                       meta_data.addListener(new MapChangeListener<String,Object>(){
+                           @Override
+                           public void onChanged(Change<? extends String, ? extends Object> ch) {
+
+                               if(ch.wasAdded()){
+
+                                   String key=ch.getKey();
+                                   Object value=ch.getValueAdded();
+                                   System.out.println(key);
+                                   switch (key) {
+                                       case "album" -> System.out.println("Album: " + value.toString());
+                                       case "artist" -> {
+                                           System.out.println("Artist: " + value.toString());
+                                           labeltext = value.toString().trim()+" : ";
+                                       }
+                                       case "title" -> {
+                                           System.out.println("Title: " + value.toString());
+                                           labeltext += value.toString();
+
+                                       }
+                                       case "year" -> System.out.println("Year: " + value.toString());
+                                       case "image" -> {
+                                           System.out.println((Image) value);
+                                           coverimage.setImage((Image) value);
+                                       }
+                                   }
+                                   coverlabel.setText(labeltext);
+
+                               }
+                           }
+                       });
+                   }
                }catch (Exception e){
                     e.printStackTrace();
                }
@@ -680,6 +729,46 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
             mediaPlayer = new MediaPlayer(media);
             mediaview.setMediaPlayer((mediaPlayer));
             setMediaSlider(mediaPlayer);
+
+           if(file.toURI().toString().contains(".mp3"))
+           {
+               labeltext = "";
+               ObservableMap<String,Object> meta_data= mediaPlayer.getMedia().getMetadata();
+
+               meta_data.addListener(new MapChangeListener<String,Object>(){
+                   @Override
+                   public void onChanged(Change<? extends String, ? extends Object> ch) {
+
+                       if(ch.wasAdded()){
+
+                           String key=ch.getKey();
+                           Object value=ch.getValueAdded();
+                           System.out.println(key);
+                           switch (key) {
+                               case "album" -> System.out.println("Album: " + value.toString());
+                               case "artist" -> {
+                                   System.out.println("Artist: " + value.toString());
+                                   labeltext = value.toString().trim()+" : ";
+                               }
+                               case "title" -> {
+                                   System.out.println("Title: " + value.toString());
+                                   labeltext += value.toString();
+
+                               }
+                               case "year" -> System.out.println("Year: " + value.toString());
+                               case "image" -> {
+                                   System.out.println((Image) value);
+                                   coverimage.setImage((Image) value);
+                               }
+                           }
+                           coverlabel.setText(labeltext);
+
+                       }
+                   }
+               });
+           }
+
+
         }else{
             System.out.println("file not found");
         }
