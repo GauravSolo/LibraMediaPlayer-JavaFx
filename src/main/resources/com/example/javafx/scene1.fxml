@@ -44,12 +44,8 @@
                 <Menu fx:id="menutheme" mnemonicParsing="false" text="Preferences" />
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="About">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Feedback" />
+                  <MenuItem mnemonicParsing="false" onAction="#createAboutStage" text="About" />
                     </items>
                 </Menu>
 
@@ -62,7 +58,10 @@
                 <StackPane fx:id="stackSidePane" prefHeight="150.0" prefWidth="200.0">
                     <children>
                         <TreeView fx:id="treeview" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="200.0" prefWidth="200.0" />
-                        <Button fx:id="hidebutton" mnemonicParsing="false" onAction="#hideButton" text="&lt;" StackPane.alignment="TOP_RIGHT" />
+                        <Button fx:id="hidebutton" mnemonicParsing="false" onAction="#hideButton" text="&lt;" StackPane.alignment="TOP_RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                     </children>
                 </StackPane>
                 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="100.0">
@@ -92,16 +91,25 @@
                                             <HBox.margin>
                                                 <Insets />
                                             </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                                         </Button>
                                         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                                         <ChoiceBox fx:id="choicebox" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" HBox.hgrow="NEVER">
                                             <HBox.margin>
                                                 <Insets left="20.0" />
-                                            </HBox.margin></ChoiceBox>
+                                            </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></ChoiceBox>
                                         <Button fx:id="prev" mnemonicParsing="false" onAction="#backMedia">
                                             <HBox.margin>
                                                 <Insets left="50.0" />
-                                            </HBox.margin></Button>
+                                            </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
                                         <Button fx:id="play" mnemonicParsing="false" onAction="#play">
                                             <graphic>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -109,7 +117,10 @@
                                                         <Image url="@../../../../../icons/play.png" />
                                                     </image>
                                                 </ImageView>
-                                            </graphic></Button>
+                                            </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
                                         <Button fx:id="next" alignment="CENTER" mnemonicParsing="false" onAction="#forwardMedia">
                                             <HBox.margin>
                                                 <Insets />
@@ -118,7 +129,10 @@
                                         <Slider fx:id="slider2" maxWidth="100.0" minWidth="80.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" HBox.hgrow="NEVER">
                                  <HBox.margin>
                                     <Insets left="10.0" />
-                                 </HBox.margin></Slider>
+                                 </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Slider>
                                         <Label fx:id="timer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" text="00:00 / 00:00" textAlignment="CENTER" HBox.hgrow="NEVER">
                                             <font>
                                                 <Font size="14.0" />
@@ -131,6 +145,9 @@
                                  <HBox.margin>
                                     <Insets right="30.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
                                     </children>
                                 </HBox>

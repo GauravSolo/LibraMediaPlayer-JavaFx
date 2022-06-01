@@ -5,6 +5,7 @@
     /* default track color: */
     -slider-filled-track-color: darkgray ;
     -slider-track-color: -slider-filled-track-color ;
+    -fx-background-color: #202124;
 }
 
 /* Make thumb same color as filled part of track */
@@ -53,9 +54,6 @@
 }
 .split-pane-divider {
   -fx-padding: 0 ;
-}
-.tree-view {
-    -fx-background-color: red;
 }
 
 .tree-cell {

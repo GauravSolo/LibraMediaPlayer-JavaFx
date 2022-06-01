@@ -10,7 +10,7 @@
 /* Make thumb same color as filled part of track */
 #slider .thumb {
     -fx-background-color: -slider-filled-track-color ;
- 
+
 }
 
 #slider .track {
@@ -52,9 +52,6 @@
 }
 .split-pane-divider {
   -fx-padding: 1 ;
-}
-.tree-view {
-    -fx-background-color: -color1;
 }
 
 .tree-cell {

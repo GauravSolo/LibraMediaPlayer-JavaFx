@@ -53,9 +53,6 @@
 .split-pane-divider {
   -fx-padding: 0 ;
 }
-.tree-view {
-    -fx-background-color: -color3;
-}
 
 .tree-cell {
     -fx-background-color: -color4; // Default color

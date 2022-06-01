@@ -177,6 +177,19 @@ public class Scene1Controller implements Initializable {
                 revertCursor();
             }
         });
+        slider2.setOnDragDetected(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                changeCursor2();
+            }
+        });
+
+        slider2.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                revertCursor2();
+            }
+        });
 
        try{
            expand =  new ImageView(new Image(new FileInputStream("src/icons/expand.png")));
@@ -684,8 +697,6 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
             mediaPlayer.play();
             play.setGraphic(pauseNode);
         }
-
-
     }
     public void backMedia()
     {
@@ -704,12 +715,21 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         }
         System.out.println("next");
     }
+
     public void changeCursor(){
         slider.setStyle("-fx-cursor: move;");
         System.out.println("draged");
     }
     public void revertCursor(){
         slider.setStyle("-fx-cursor: hand;");
+        System.out.println("drageddddd");
+    }
+    public void changeCursor2(){
+        slider2.setStyle("-fx-cursor: move;");
+        System.out.println("draged");
+    }
+    public void revertCursor2(){
+        slider2.setStyle("-fx-cursor: hand;");
         System.out.println("drageddddd");
     }
 
@@ -741,7 +761,23 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         }
     }
 
-
+    public void createAboutStage(){
+        Parent root2;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("scene2.fxml"));
+            Scene scene2 = new Scene(fxmlLoader.load(), 600, 400);
+            Stage stage2 = new Stage();
+            stage2.setTitle("About");
+            stage2.setScene(scene2);
+            stage2.show();
+            // Hide this current window (if this is what you want)
+//            stage.hide();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

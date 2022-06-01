@@ -10,8 +10,7 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-import static javafx.scene.input.KeyCode.ESCAPE;
-import static javafx.scene.input.KeyCode.SPACE;
+import static javafx.scene.input.KeyCode.*;
 
 public class Main extends  Application {
     @Override
@@ -35,14 +34,14 @@ public class Main extends  Application {
             @Override
             public void handle(KeyEvent keyEvent) {
                 System.out.println(keyEvent.getCode());
-                if(keyEvent.getCode() == SPACE)
-                {
+                if(keyEvent.getCode() == SPACE) {
                     controller.play();
                 }
             }
         });
         controller.setStage(primaryStage);
         controller.setScene(scene);
+        primaryStage.setTitle("Libra MediaPlayer");
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.show();
