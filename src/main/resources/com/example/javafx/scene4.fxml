@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TextArea fx:id="abouttextarea2" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-control-inner-background: #043339;" text="--------------------------------Welcome-----------------------------------&#10;&#10;Hi, My name is Gaurav Sharma.&#10;I am Software Developer.&#10;I developed this Libra MediaPlayer to solve a problem &#10;that is when a my video directory has a lots of video &#10;then I faced a problem to watch contiguous videos&#10;because I had to close videoplayer for open a next&#10;video so I created this Libra MediaPlayer so I can  &#10;see a videos list in sidebar and I can easily switch to&#10;next video or randor video.&#10;&#10;                                                        Thanks,&#10;                                                        Libra MediaPlayer     &#10;" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
+   </center>
+</BorderPane>

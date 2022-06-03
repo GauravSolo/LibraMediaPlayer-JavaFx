@@ -857,7 +857,7 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
             fxmlLoader.setLocation(getClass().getResource("scene2.fxml"));
             Scene scene2 = new Scene(fxmlLoader.load(), 600, 400);
             Stage stage2 = new Stage();
-            stage2.setTitle("About");
+            stage2.setTitle("Contact Us");
             stage2.setScene(scene2);
             stage2.show();
             // Hide this current window (if this is what you want)
@@ -878,6 +878,24 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
             stage2.setTitle("Feedback");
             stage2.setScene(scene2);
             stage2.show();
+            // Hide this current window (if this is what you want)
+//            stage.hide();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void createAboutSection(){
+        Parent root3;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("scene4.fxml"));
+            Scene scene3 = new Scene(fxmlLoader.load(), 600, 400);
+            Stage stage3 = new Stage();
+            stage3.setTitle("About");
+            stage3.setScene(scene3);
+            stage3.show();
             // Hide this current window (if this is what you want)
 //            stage.hide();
         }

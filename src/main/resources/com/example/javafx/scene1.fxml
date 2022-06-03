@@ -42,10 +42,15 @@
                 </Menu>
 
                 <Menu fx:id="menutheme" mnemonicParsing="false" text="Preferences" />
+            <Menu mnemonicParsing="false" text="Feedback">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createFeedbackStage" text="Feedback" />
+              </items>
+            </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                  <MenuItem mnemonicParsing="false" onAction="#createFeedbackStage" text="Feedback" />
-                  <MenuItem mnemonicParsing="false" onAction="#createAboutStage" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#createAboutSection" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#createAboutStage" text="Contact Us" />
                     </items>
                 </Menu>
 

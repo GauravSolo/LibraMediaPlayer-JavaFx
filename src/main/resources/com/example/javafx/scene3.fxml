@@ -12,15 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.Rating?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Feedback">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="600.0" style="-fx-background-color: #043339;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Feedback">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" minWidth="100.0" text="Name :">
+                  <Label alignment="CENTER" minWidth="100.0" text="Name :" textFill="WHITE">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -33,7 +32,7 @@
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" minWidth="100.0" text="Email :">
+                  <Label alignment="CENTER" minWidth="100.0" text="Email :" textFill="#f2e1e1">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -49,7 +48,7 @@
             <HBox alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="200.0">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" minWidth="100.0" text="Rating :">
+                  <Label alignment="CENTER" minWidth="100.0" text="Rating :" textFill="WHITE">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -65,7 +64,7 @@
             <HBox alignment="CENTER" prefHeight="150.0">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" minWidth="130.0" text="Feedback :">
+                  <Label alignment="CENTER" minWidth="130.0" text="Feedback :" textFill="WHITE">
                      <font>
                         <Font size="22.0" />
                      </font>
