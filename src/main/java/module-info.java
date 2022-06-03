@@ -11,6 +11,7 @@ module com.example.javafx {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires javafx.media;
+    requires java.sql;
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;

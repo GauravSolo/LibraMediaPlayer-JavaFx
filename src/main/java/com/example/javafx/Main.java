@@ -1,4 +1,5 @@
 package com.example.javafx;
+import com.almasb.fxgl.net.Connection;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.event.EventHandler;
@@ -9,7 +10,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.util.Objects;
-
 import static javafx.scene.input.KeyCode.*;
 
 public class Main extends  Application {

@@ -868,6 +868,24 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         }
     }
 
+    public void createFeedbackStage(){
+        Parent root2;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("scene3.fxml"));
+            Scene scene2 = new Scene(fxmlLoader.load(), 600, 450);
+            Stage stage2 = new Stage();
+            stage2.setTitle("Feedback");
+            stage2.setScene(scene2);
+            stage2.show();
+            // Hide this current window (if this is what you want)
+//            stage.hide();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

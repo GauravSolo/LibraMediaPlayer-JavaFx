@@ -44,7 +44,7 @@
                 <Menu fx:id="menutheme" mnemonicParsing="false" text="Preferences" />
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                  <MenuItem mnemonicParsing="false" text="Feedback" />
+                  <MenuItem mnemonicParsing="false" onAction="#createFeedbackStage" text="Feedback" />
                   <MenuItem mnemonicParsing="false" onAction="#createAboutStage" text="About" />
                     </items>
                 </Menu>
