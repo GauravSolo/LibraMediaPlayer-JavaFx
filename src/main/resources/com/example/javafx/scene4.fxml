@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <TextArea fx:id="abouttextarea2" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-control-inner-background: #043339;" text="--------------------------------Welcome-----------------------------------&#10;&#10;Hi, My name is Gaurav Sharma.&#10;I am Software Developer.&#10;I developed this Libra MediaPlayer to solve a problem &#10;that is when a my video directory has a lots of video &#10;then I faced a problem to watch contiguous videos&#10;because I had to close videoplayer for open a next&#10;video so I created this Libra MediaPlayer so I can  &#10;see a videos list in sidebar and I can easily switch to&#10;next video or randor video.&#10;&#10;                                                        Thanks,&#10;                                                        Libra MediaPlayer     &#10;" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextArea>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox maxHeight="37.0" prefHeight="49.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="------------------------Welcome--------------------------" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-control-inner-background: #043339;-fx-border-color:#043339 ;-fx-border-width:0;-fx-background-insets: 0;-fx-focus-color: transparent;" text="I am Software Developer.&#10;I developed this Libra MediaPlayer to solve a problem &#10;that is when a my video directory has a lots of video &#10;then I faced a problem to watch contiguous videos&#10;because I had to close videoplayer for open a next&#10;video so I created this Libra MediaPlayer so I can  &#10;see a videos list in sidebar and I can easily switch to&#10;next video or randor video." wrapText="true" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-control-inner-background: #043339; -fx-text-fill: white;-fx-border-color:#043339 ;-fx-border-width:0;-fx-background-insets: 0;-fx-focus-color: transparent;" text="&#10;                                                        Thanks,&#10;                                                        Libra MediaPlayer" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </center>
 </BorderPane>

@@ -12,6 +12,7 @@ module com.example.javafx {
     requires com.almasb.fxgl.all;
     requires javafx.media;
     requires java.sql;
+    requires mysql.connector.java;
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;

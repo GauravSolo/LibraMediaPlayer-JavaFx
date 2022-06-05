@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="JavaFx">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFx</output-path>
+    <root id="root">
+      <element id="archive" name="JavaFx.jar">
+        <element id="module-output" name="JavaFx" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libavplugin-54.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libjavafx_font_freetype.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libprism_es2.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libprism_common.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libglass.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libjavafx_font.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libglassgtk3.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libgstreamer-lite.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libfxplugins.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libjfxmedia.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libavplugin-ffmpeg-56.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libjavafx_iio.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libdecora_sse.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libglassgtk2.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libprism_sw.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libavplugin-ffmpeg-58.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libjavafx_font_pango.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libavplugin-ffmpeg-57.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libjfxwebkit.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libavplugin-56.so" />
+        <element id="file-copy" path="$PATH_TO_FIX$/libavplugin-57.so" />
+      </element>
+    </root>
+  </artifact>
+</component>

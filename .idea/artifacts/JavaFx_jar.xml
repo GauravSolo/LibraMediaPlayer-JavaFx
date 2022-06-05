@@ -1,0 +1,82 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaFx:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFx_jar</output-path>
+    <root id="archive" name="JavaFx.jar">
+      <element id="module-output" name="JavaFx" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/synedra/validatorfx/0.2.1/validatorfx-0.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/18-ea+6/javafx-fxml-18-ea+6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/almasb/fxgl-gameplay/17/fxgl-gameplay-17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-web/18-ea+6/javafx-web-18-ea+6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-web/18-ea+6/javafx-web-18-ea+6-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/18-ea+6/javafx-graphics-18-ea+6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/gluonhq/attach/audio/4.0.9/audio-4.0.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/18-ea+6/javafx-base-18-ea+6-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.12.1/jackson-annotations-2.12.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/18-ea+6/javafx-graphics-18-ea+6-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/kordamp/ikonli/ikonli-javafx/12.3.0/ikonli-javafx-12.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.5.32/kotlin-stdlib-1.5.32-modular.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.32/kotlin-stdlib-common-1.5.32.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/18-ea+6/javafx-controls-18-ea+6-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/eu/hansolo/tilesfx/11.48/tilesfx-11.48.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.3.2/formsfx-core-11.3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/almasb/fxgl-entity/17/fxgl-entity-17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/gluonhq/attach/lifecycle/4.0.9/lifecycle-4.0.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.12.1/jackson-core-2.12.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-media/18-ea+6/javafx-media-18-ea+6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-media/18-ea+6/javafx-media-18-ea+6-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/18-ea+6/javafx-base-18-ea+6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/18-ea+6/javafx-fxml-18-ea+6-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/gluonhq/attach/storage/4.0.9/storage-4.0.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/11.1.1/controlsfx-11.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.12.1/jackson-databind-2.12.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/kordamp/ikonli/ikonli-core/12.3.0/ikonli-core-12.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/gluonhq/attach/util/4.0.9/util-4.0.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/18-ea+6/javafx-controls-18-ea+6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/almasb/fxgl-core/17/fxgl-core-17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/almasb/fxgl/17/fxgl-17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/almasb/fxgl-io/17/fxgl-io-17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/almasb/fxgl-scene/17/fxgl-scene-17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/kordamp/bootstrapfx/bootstrapfx-core/0.4.0/bootstrapfx-core-0.4.0.jar" path-in-jar="/" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx-swt.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.base.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.controls.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.fxml.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.graphics.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.media.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.properties" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.swing.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.web.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libavplugin-56.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libavplugin-54.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libavplugin-57.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libavplugin-ffmpeg-56.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libavplugin-ffmpeg-57.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libavplugin-ffmpeg-58.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libdecora_sse.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libfxplugins.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libglass.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libglassgtk2.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libglassgtk3.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libgstreamer-lite.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libjavafx_font.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libjavafx_font_freetype.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libjavafx_iio.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libjavafx_font_pango.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libjfxmedia.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libprism_es2.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libprism_common.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libjfxwebkit.so" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/libprism_sw.so" />
+      <element id="artifact" artifact-name="mysql-connector-java-8_0_29_jar" />
+    </root>
+  </artifact>
+</component>

@@ -34,6 +34,7 @@ public class Feedback {
     public  void submitFeedback() throws SQLException, ClassNotFoundException {
         ConnectionClass connectionclass = new ConnectionClass();
         Connection connection = (Connection) connectionclass.getConnection();
+        System.out.println("connection" +connection);
         star =  Math.round(rating.getRating());
         msg = feedtextarea.getText();
         name = nameinput.getText();

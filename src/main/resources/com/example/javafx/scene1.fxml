@@ -94,79 +94,86 @@
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor></Slider>
-                        <HBox fx:id="mediahbox" alignment="BOTTOM_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="216.0" VBox.vgrow="NEVER">
-                            <children>
-                                <HBox alignment="CENTER_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" HBox.hgrow="ALWAYS">
-                                    <children>
-                                        <Button fx:id="showbutton" mnemonicParsing="false" onAction="#showButton" text="&gt;">
-                                            <HBox.margin>
-                                                <Insets />
-                                            </HBox.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                        </Button>
-                                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                                        <ChoiceBox fx:id="choicebox" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" HBox.hgrow="NEVER">
-                                            <HBox.margin>
-                                                <Insets left="20.0" />
-                                            </HBox.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor></ChoiceBox>
-                                        <Button fx:id="prev" mnemonicParsing="false" onAction="#backMedia">
-                                            <HBox.margin>
-                                                <Insets left="50.0" />
-                                            </HBox.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor></Button>
-                                        <Button fx:id="play" mnemonicParsing="false" onAction="#play">
-                                            <graphic>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../../../../../icons/play.png" />
-                                                    </image>
-                                                </ImageView>
-                                            </graphic>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor></Button>
-                                        <Button fx:id="next" alignment="CENTER" mnemonicParsing="false" onAction="#forwardMedia">
-                                            <HBox.margin>
-                                                <Insets />
-                                            </HBox.margin></Button>
-                                        <Region HBox.hgrow="ALWAYS" />
-                                        <Slider fx:id="slider2" maxWidth="100.0" minWidth="80.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" HBox.hgrow="NEVER">
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor></Slider>
-                                        <Label fx:id="timer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" text="00:00 / 00:00" textAlignment="CENTER" HBox.hgrow="NEVER">
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                            <HBox.margin>
-                                                <Insets left="20.0" right="10.0" />
-                                            </HBox.margin>
-                                        </Label>
-                                          <Button fx:id="fullscreenbutton" alignment="CENTER" contentDisplay="CENTER" maxHeight="18.0" maxWidth="18.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#toggleScreen" prefHeight="15.0" prefWidth="15.0" textAlignment="JUSTIFY">
-                                 <HBox.margin>
-                                    <Insets right="30.0" />
-                                 </HBox.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </HBox>
                     </children>
                 </VBox>
             </items>
         </SplitPane>
     </center>
+   <bottom>
+            <HBox fx:id="mediahbox" alignment="BOTTOM_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="216.0" BorderPane.alignment="CENTER">
+                <children>
+                    <HBox alignment="CENTER_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Button fx:id="showbutton" mnemonicParsing="false" onAction="#showButton" text="&gt;">
+                                <HBox.margin>
+                                    <Insets />
+                                </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                            </Button>
+                            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            <ChoiceBox fx:id="choicebox" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" HBox.hgrow="NEVER">
+                                <HBox.margin>
+                                    <Insets left="20.0" />
+                                </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ChoiceBox>
+                            <Button fx:id="prev" mnemonicParsing="false" onAction="#backMedia">
+                                <HBox.margin>
+                                    <Insets left="50.0" />
+                                </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                            <Button fx:id="play" mnemonicParsing="false" onAction="#play">
+                                <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../../../../icons/play.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                            <Button fx:id="next" alignment="CENTER" mnemonicParsing="false" onAction="#forwardMedia">
+                                <HBox.margin>
+                                    <Insets />
+                                </HBox.margin>
+                  </Button>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Slider fx:id="slider2" maxWidth="100.0" minWidth="80.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Slider>
+                            <Label fx:id="timer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" text="00:00 / 00:00" textAlignment="CENTER" HBox.hgrow="NEVER">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                                <HBox.margin>
+                                    <Insets left="20.0" right="10.0" />
+                                </HBox.margin>
+                            </Label>
+                              <Button fx:id="fullscreenbutton" alignment="CENTER" contentDisplay="CENTER" maxHeight="18.0" maxWidth="18.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#toggleScreen" prefHeight="15.0" prefWidth="15.0" textAlignment="JUSTIFY">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                        </children>
+                    </HBox>
+                </children>
+            </HBox>
+   </bottom>
 </BorderPane>

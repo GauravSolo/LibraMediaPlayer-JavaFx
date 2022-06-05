@@ -121,6 +121,7 @@ public class Scene1Controller implements Initializable {
     private  String menuid;
     private Stage stage;
     private  Scene scene;
+    private Boolean hide = false;
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -257,15 +258,21 @@ public class Scene1Controller implements Initializable {
                 if(!treeflag)
                 {
                     splitpane.setDividerPosition(0,0);
-                }else if(treeflag && stage.isFullScreen()){
-                    splitpane.setDividerPosition(0,0.2);
-                    System.out.println("full screen  ");
+                    System.out.println("full screen1  "+ splitpane.getDividerPositions());
+
+
                 }
+//                else if(treeflag && stage.isFullScreen()){
+//                    splitpane.setDividerPosition(0,0.2);
+//                    System.out.println("full screen2  ");
+//                }
                 if(!stage.isFullScreen())
                 {
                     fullscreenbutton.setGraphic(expand);
                 }
                 System.out.println(" stage full screen "+ stage.isFullScreen());
+                System.out.println("full screen 3 "+ splitpane.getDividerPositions());
+
             }
         });
 
@@ -343,7 +350,9 @@ public class Scene1Controller implements Initializable {
                                    showbutton.setVisible(true);
                                    showbutton.setManaged(true);
                                    splitpane.setDividerPosition(0,0);
+                                   hide = true;
                                }
+                             System.out.println("treee 1111111"+treeflag + hide);
                            }
                 System.out.println("treee "+treeflag);
 
@@ -371,7 +380,14 @@ public class Scene1Controller implements Initializable {
                    treeview.getParent().setManaged(true);
                    showbutton.setVisible(false);
                    showbutton.setManaged(false);
-                   splitpane.setDividerPosition(0,divpos);
+                   if(hide && stage.isFullScreen() )
+                   {
+                       splitpane.setDividerPosition(0,0.2);
+                   }else if(hide)
+                    {
+                        splitpane.setDividerPosition(0,divpos);
+                    }
+                   hide = false;
                }
            }
 
@@ -392,7 +408,14 @@ public class Scene1Controller implements Initializable {
                     treeview.getParent().setManaged(true);
                     showbutton.setVisible(false);
                     showbutton.setManaged(false);
-                    splitpane.setDividerPosition(0,divpos);
+                    if(hide && stage.isFullScreen() )
+                    {
+                        splitpane.setDividerPosition(0,0.2);
+                    }else if(hide)
+                    {
+                        splitpane.setDividerPosition(0,divpos);
+                    }
+                    hide = false;
                 }
             }
         });
@@ -841,11 +864,34 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
             stage.setFullScreen(false);
             if(treeflag)
             {
-                splitpane.setDividerPosition(0,0.7);
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        // here goes your code to delay
+                        splitpane.setDividerPositions(0.3);
+                        cancel();
+                    }
+                }, 200);
+//                / stage.getScene().getWidth());
             }
+//            System.out.println("get divdideress "+splitpane.getDividers());
+//            System.out.println("get divdideress "+splitpane.getDividers().get(0));
+//            System.out.println("get divdideress "+splitpane.set);
             fullscreenbutton.setGraphic(expand);
         }else{
             stage.setFullScreen(true);
+            if(treeflag)
+            {
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        // here goes your code to delay
+                        splitpane.setDividerPositions(0.2);
+                        cancel();
+                    }
+                }, 200);
+//                / stage.getScene().getWidth());
+            }
             fullscreenbutton.setGraphic(compress);
         }
     }
@@ -855,7 +901,7 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("scene2.fxml"));
-            Scene scene2 = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene2 = new Scene(fxmlLoader.load(), 605, 405);
             Stage stage2 = new Stage();
             stage2.setTitle("Contact Us");
             stage2.setScene(scene2);
@@ -873,7 +919,7 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("scene3.fxml"));
-            Scene scene2 = new Scene(fxmlLoader.load(), 600, 450);
+            Scene scene2 = new Scene(fxmlLoader.load(), 605, 450);
             Stage stage2 = new Stage();
             stage2.setTitle("Feedback");
             stage2.setScene(scene2);
@@ -891,7 +937,7 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("scene4.fxml"));
-            Scene scene3 = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene3 = new Scene(fxmlLoader.load(), 605, 405);
             Stage stage3 = new Stage();
             stage3.setTitle("About");
             stage3.setScene(scene3);
