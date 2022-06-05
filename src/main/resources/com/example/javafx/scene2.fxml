@@ -24,7 +24,7 @@
                   </HBox>
                   <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-control-inner-background: #043339;-fx-border-color:#043339 ;-fx-border-width:0;-fx-background-insets: 0;-fx-focus-color: transparent;" text="   ___             Author        =&gt; Gaurav Sharma      ___&#10; \(* ͜*)            Github        =&gt; GauravSolo           \(* ͜*)/&#10;   )_)Z            Instagram  =&gt; Gaurav_Solo           )_)&#10;   /  \              Version       =&gt; 1.1.0                      /  \" wrapText="true" HBox.hgrow="ALWAYS">
+                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-control-inner-background: #043339;-fx-border-color:#043339 ;-fx-border-width:0;-fx-background-insets: 0;-fx-focus-color: transparent;" text="                ___             Author        =&gt; Gaurav Sharma      ___&#10;              \(* ͜*)            Github        =&gt; GauravSolo           \(* ͜*)/&#10;                 )_)Z            Instagram  =&gt; Gaurav_Solo           )_)&#10;                /  \              Version       =&gt; 1.1.0                      /  \" wrapText="true" HBox.hgrow="ALWAYS">
                            <font>
                               <Font size="19.0" />
                            </font>
