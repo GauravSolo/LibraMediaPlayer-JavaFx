@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="605.0" style="-fx-background-color: #043339;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -24,20 +23,91 @@
                   </HBox>
                   <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-control-inner-background: #043339;-fx-border-color:#043339 ;-fx-border-width:0;-fx-background-insets: 0;-fx-focus-color: transparent;" text="                ___             Author        =&gt; Gaurav Sharma      ___&#10;              \(* ͜*)            Github        =&gt; GauravSolo           \(* ͜*)/&#10;                 )_)Z            Instagram  =&gt; Gaurav_Solo           )_)&#10;                /  \              Version       =&gt; 1.1.0                      /  \" wrapText="true" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </TextArea>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text=" ___  " VBox.vgrow="NEVER">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="\\(* ͜*) ">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="     )_)Z">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_RIGHT" layoutX="10.0" layoutY="181.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text=" /  \  ">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="Author        =&gt;  Gaurav Sharma" VBox.vgrow="NEVER">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="Github        =&gt;  GauravSolo       ">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="Instagram  =&gt;  Gaurav_Solo     ">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="181.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="Version       =&gt;  1.1.0                ">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text=" ___ " VBox.vgrow="NEVER">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text="\\(* ͜*)/">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text=")_)">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="181.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="605.0" style="-fx-text-fill: white; -fx-background-color: #043339;" text=" /  \ ">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="605.0" style="-fx-text-fill: white;-fx-background-color: #043339;" text="𝑰 𝒉𝒐𝒑𝒆 𝒚𝒐𝒖 𝒆𝒏𝒋𝒐𝒚 𝑳𝒊𝒃𝒓𝒂 𝑴𝒆𝒅𝒊𝒂𝑷𝒍𝒂𝒚𝒆𝒓 :)" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font size="23.0" />
-                           </font>
-                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-text-fill: white;-fx-background-color: #043339;" text="𝑰 𝒉𝒐𝒑𝒆 𝒚𝒐𝒖 𝒆𝒏𝒋𝒐𝒚 𝑳𝒊𝒃𝒓𝒂 𝑴𝒆𝒅𝒊𝒂𝑷𝒍𝒂𝒚𝒆𝒓 :)" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                </children>
