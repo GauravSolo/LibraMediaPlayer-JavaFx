@@ -606,7 +606,10 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
 //                    rootItem1.getChildren().add(new TreeItem<>(file.getName().toString()));
                     System.out.println("directory:  " + file.getCanonicalPath());
 
-                    rootItem1.getChildren().add(displayDirectoryContents(file));
+                    if(doDirContainFile(file))
+                    {
+                        rootItem1.getChildren().add(displayDirectoryContents(file));
+                    }
                 } else if((file.toString().contains(".mp4") || file.toString().contains(".mp3") ) && !file.isHidden()){
                     System.out.println("uri   ==="+ file.toURI() + " -- "+ file.toURI().toURL());
                     treemap.put(file.getName().toString(), file.toURI().toString());
@@ -622,6 +625,32 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
         return rootItem1;
     }
 
+    public boolean doDirContainFile(File dir)
+    {
+        try {
+            File[] files = dir.listFiles();
+            for (File file : files) {
+                if (file.isDirectory() && !file.isHidden()) {
+
+//                    rootItem1.getChildren().add(new TreeItem<>(file.getName().toString()));
+                    System.out.println("directory:  " + file.getCanonicalPath());
+
+                    if(doDirContainFile(file))
+                    {
+                        return doDirContainFile(file);
+                    }
+                } else if((file.toString().contains(".mp4") || file.toString().contains(".mp3") ) && !file.isHidden()){
+                    System.out.println("Mp 4 or 3 file found !");
+                    return true;
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
     public void eventlist()
     {
         System.out.println("eventlist");
