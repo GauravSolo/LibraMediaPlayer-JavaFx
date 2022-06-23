@@ -116,7 +116,7 @@ public class Scene1Controller implements Initializable {
     private  String hours_string_real,minutes_string_real,seconds_string_real;
     private long MIN_STATIONARY_TIME = 7000000000L ; // nanoseconds
     private boolean treeflag = false;
-    private final String[] mediaspeed = {"0.5 x", "1 x", "2 x", "3 x", "4 x"};
+    private final String[] mediaspeed = {"0.25 x","0.5 x", "1 x", "2 x", "3 x", "4 x"};
     private RadioMenuItem[] themes = new RadioMenuItem[]{new RadioMenuItem("Theme 1"),new RadioMenuItem("Theme 2"), new RadioMenuItem("Theme 3")};
     private  String menuid;
     private Stage stage;
@@ -165,7 +165,7 @@ public class Scene1Controller implements Initializable {
 
 
         choicebox.getItems().addAll(mediaspeed);
-        choicebox.getSelectionModel().select(1);
+        choicebox.getSelectionModel().select(2);
 //        timer.setStyle("-fx-text-fill: white;");
 //        mediahbox.setStyle("-fx-background-color: lightsteelblue;");
 
@@ -201,34 +201,34 @@ public class Scene1Controller implements Initializable {
         });
 
        try{
-           expand =  new ImageView(new Image(new FileInputStream("src/icons/expand.png")));
+           expand =  new ImageView(new Image(getClass().getResource("icons/expand.png").toString()));
            expand.setFitWidth(18.0);
            expand.setFitHeight(18.0);
 
-           compress =  new ImageView(new Image(new FileInputStream("src/icons/compress.png")));
+           compress =  new ImageView(new Image(getClass().getResource("icons/compress.png").toString()));
            compress.setFitWidth(18.0);
            compress.setFitHeight(18.0);
 
            fullscreenbutton.setGraphic(expand);
 
 
-           playNode = new ImageView(new Image(new FileInputStream("src/icons/playicon.png")));
+           playNode = new ImageView(new Image(getClass().getResource("icons/playicon.png").toString()));
            playNode.setFitWidth(15.0);
            playNode.setFitHeight(15.0);
            play.setGraphic(playNode);
 
 
-           pauseNode = new ImageView(new Image(new FileInputStream("src/icons/pauseicon.png")));
+           pauseNode = new ImageView(new Image(getClass().getResource("icons/pauseicon.png").toString()));
            pauseNode.setFitWidth(15.0);
            pauseNode.setFitHeight(15.0);
 
 
-           prevNode = new ImageView(new Image(new FileInputStream("src/icons/backwardicon.png")));
+           prevNode = new ImageView(new Image(getClass().getResource("icons/backwardicon.png").toString()));
            prevNode.setFitWidth(15.0);
            prevNode.setFitHeight(15.0);
            prev.setGraphic(prevNode);
 
-           nextNode = new ImageView(new Image(new FileInputStream("src/icons/fastforward.png")));
+           nextNode = new ImageView(new Image(getClass().getResource("icons/fastforward.png").toString()));
            nextNode.setFitWidth(15.0);
            nextNode.setFitHeight(15.0);
            next.setGraphic(nextNode);
@@ -243,8 +243,8 @@ public class Scene1Controller implements Initializable {
 //        treeview.getParent().setManaged(false);
 
 //        Media Player
-        file = new  File("src/main/resources/com/example/javafx/reel.mp4");
-        media = new Media(file.toURI().toString());
+//        file = new  File("src/main/resources/com/example/javafx/reel.mp4");
+        media = new Media(getClass().getResource("reel.mp4").toString());
         mediaPlayer = new MediaPlayer(media);
 
 
@@ -900,7 +900,7 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
                         splitpane.setDividerPositions(0.3);
                         cancel();
                     }
-                }, 200);
+                }, 50);
 //                / stage.getScene().getWidth());
             }
 //            System.out.println("get divdideress "+splitpane.getDividers());
@@ -918,12 +918,51 @@ public  void setMediaSlider(MediaPlayer funcMediaPlayer) {
                         splitpane.setDividerPositions(0.2);
                         cancel();
                     }
-                }, 200);
+                }, 50);
 //                / stage.getScene().getWidth());
             }
             fullscreenbutton.setGraphic(compress);
         }
     }
+
+
+
+    public void toggleScreen2(Boolean maxind){
+        if(maxind)
+        {
+            if(treeflag)
+            {
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        // here goes your code to delay
+                        splitpane.setDividerPositions(0.2);
+                        cancel();
+                    }
+                }, 50);
+//                / stage.getScene().getWidth());
+            }
+//            System.out.println("get divdideress "+splitpane.getDividers());
+//            System.out.println("get divdideress "+splitpane.getDividers().get(0));
+//            System.out.println("get divdideress "+splitpane.set);
+            fullscreenbutton.setGraphic(expand);
+        }else{
+            if(treeflag)
+            {
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        // here goes your code to delay
+                        splitpane.setDividerPositions(0.3);
+                        cancel();
+                    }
+                }, 50);
+//                / stage.getScene().getWidth());
+            }
+            fullscreenbutton.setGraphic(compress);
+        }
+    }
+
 
     public void createAboutStage(){
         Parent root2;

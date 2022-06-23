@@ -87,7 +87,7 @@
    <bottom>
       <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="feedbtn" alignment="CENTER" mnemonicParsing="false" onAction="#submitFeedback" style="-fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: orange;" text="Submit" textFill="#f2eaea">
+            <Button fx:id="feedbtn" alignment="CENTER" mnemonicParsing="false" onAction="#submitFeedback" onMouseClicked="#changesubmit" style="-fx-border-radius: 15; -fx-background-radius: 15; -fx-background-color: orange;" text="Submit" textFill="#f2eaea">
                <font>
                   <Font size="18.0" />
                </font>

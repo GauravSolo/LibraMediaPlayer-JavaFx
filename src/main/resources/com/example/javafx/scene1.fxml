@@ -104,7 +104,7 @@
                 <children>
                     <HBox alignment="CENTER_LEFT" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="567.0" HBox.hgrow="ALWAYS">
                         <children>
-                            <Button fx:id="showbutton" mnemonicParsing="false" onAction="#showButton" text="&gt;">
+                            <Button fx:id="showbutton" minWidth="33.0" mnemonicParsing="false" onAction="#showButton" prefHeight="25.0" prefWidth="44.0" text="&gt;">
                                 <HBox.margin>
                                     <Insets />
                                 </HBox.margin>
@@ -133,7 +133,7 @@
                                 <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../../../icons/play.png" />
+                                            <Image url="@icons/play.png" />
                                         </image>
                                     </ImageView>
                                 </graphic>
